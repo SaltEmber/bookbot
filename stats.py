@@ -13,6 +13,17 @@ def get_num_letters(text):
             counting_dict[letter.lower()] = 1
             continue
         counting_dict[letter.lower()] += 1
-    
+
     return counting_dict
-        
+
+def sorting_num_letters(letter_dict):
+    index = []
+
+    for k, v in letter_dict.items():
+        index.append({'letter': k, 'num': v})
+    
+    def sort_on(items):
+        return items["num"]
+    index.sort(reverse=True, key=sort_on)
+
+    return index
